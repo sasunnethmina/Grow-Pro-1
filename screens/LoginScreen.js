@@ -1,4 +1,5 @@
 import { SafeAreaView, Image,Text,TouchableOpacity, View ,TextInput} from 'react-native'
+<<<<<<< HEAD
 import React, { useState } from 'react'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -41,6 +42,19 @@ const LoginScreen = () => {
     <SafeAreaView style={{flex:1 ,justifyContent:'center'}}>
 <View style={{paddingHorizontal:25}}>
 <View style={{alignItems:'center',marginBottom:40 ,marginTop:-50}}>
+=======
+import React from 'react'
+import MaterialIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
+import facebooksvg from "../assets/misc/Facebook.svg";
+import googlesvg from '../assets/misc/Google.svg';
+import linkedinsvg from '../assets/misc/Linkedin.svg';
+const LoginScreen = () => {
+  return (
+    <SafeAreaView style={{flex:1 ,justifyContent:'center'}}>
+<View style={{paddingHorizontal:25}}>
+<View style={{alignItems:'center',marginBottom:40 ,marginTop:-100}}>
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
 <Image 
 style={{width: 200,
 height: 100,
@@ -63,11 +77,15 @@ source={require('../assets/logo01.png')} />
       marginBottom:20}}>
 
       <MaterialIcons name='email' size={20} color="#666" style={{marginRight:5}}/>
+<<<<<<< HEAD
       <TextInput
         placeholder="Email"
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
+=======
+      <TextInput placeholder='Email ID' style={{flex:1,paddingVertical:0}} keyboardType="email-address"/>
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
       </View>
       
       <View style={{flexDirection:'row',
@@ -77,6 +95,7 @@ source={require('../assets/logo01.png')} />
       marginBottom:20}}>
 
       <MaterialIcons name="lock" size={20} color="#666" style={{marginRight:5}}/>
+<<<<<<< HEAD
       <TextInput
         placeholder="Password"
         onChangeText={(text) => setPassword(text)}
@@ -85,11 +104,22 @@ source={require('../assets/logo01.png')} />
       />
 <TouchableOpacity onPress={()=>{}}>
 <Text style={{color:'#50C878' ,fontWeight:'700',marginLeft:160}}>Forgot password?</Text>
+=======
+      <TextInput placeholder='password' 
+      style={{flex:1,paddingVertical:0}}
+        secureTextEntry={true}/>
+<TouchableOpacity onPress={()=>{}}>
+<Text style={{color:'#50C878' ,fontWeight:'700'}}>Forgot password?</Text>
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
 
 </TouchableOpacity>
       </View>
 
+<<<<<<< HEAD
       <TouchableOpacity onPress={()=>navigation.navigate('Home')} 
+=======
+      <TouchableOpacity onPress={()=>{}} 
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
       style={{backgroundColor:'#07CC3E',
       padding:20,
       borderRadius:10,
@@ -99,6 +129,7 @@ source={require('../assets/logo01.png')} />
 
 <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>or,login with...</Text>
       
+<<<<<<< HEAD
 
 <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:30}}>
       <TouchableOpacity  onPress={()=>{}}style={{borderColor:'#ddd',borderWidth:1,borderRadius:10,paddingHorizontal:40,paddingVertical:10}} >
@@ -118,8 +149,25 @@ source={require('../assets/logo01.png')} />
     </TouchableOpacity>
     </View> 
       </View> 
+=======
+      <TouchableOpacity   onPress={()=>{}}style={{borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}} >
+        <googlesvg height={24} width={24}/>
+      </TouchableOpacity>
+      <TouchableOpacity   onPress={()=>{}}style={{borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}} >
+        <facebooksvg height={24} width={24}/>
+      </TouchableOpacity>
+      <TouchableOpacity   onPress={()=>{}}style={{borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}} >
+        <linkedinsvg height={24} width={24}/>
+      </TouchableOpacity>
+      </View>
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
     </SafeAreaView>
   )
 }
 
+<<<<<<< HEAD
 export default LoginScreen;
+=======
+export default LoginScreen
+
+>>>>>>> ceb1af8693ba674b18a77b57d41d1fb3531358c1
