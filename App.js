@@ -11,13 +11,15 @@ export default function App() {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Getstart" component={Getstarted} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ComponentPage" component={ComponentPage} />
-      </Stack.Navigator>
     </NavigationContainer>
+    <Stack.Navigator>
+    <Stack.Screen name="Getstart" component={Getstarted}/>
+<Stack.Screen name="LoginScreen" component={LoginScreen}/>
+    <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
+    <Stack.Screen name="Home" component={HomeScreen}/>
+    <Stack.Screen name="ComponentPage" component={ComponentPage}/>
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }

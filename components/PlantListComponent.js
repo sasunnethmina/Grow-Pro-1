@@ -6,7 +6,12 @@ const PlantListComponent = () => {
   return (
     <View>
       <Text style={{ fontSize: 20, marginBottom: 10 }}>Component</Text>
-      <AddPlant title="mint" age="2 days" />
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ backgroundColor: 'green', flex: 1, marginRight: 10 }}>
+          <Text style={{ padding: 10, color: 'white' }}>Card 1</Text>
+        </View>
+        
+      </View>
     </View>
   );
 };

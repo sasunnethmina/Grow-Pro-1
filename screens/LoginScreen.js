@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   SafeAreaView,
   Image,
@@ -6,12 +7,10 @@ import {
   View,
   TextInput,
 } from "react-native";
-import React, { useState } from "react";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import MaterialIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB3sqtNagwekTBYwGEGYkdCQBQtTHBt8IA",
@@ -24,6 +23,7 @@ const firebaseConfig = {
   appId: "1:1029257731679:web:51e06fecfa8758653605ea",
   measurementId: "G-7T0SZ7E6QB",
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -31,8 +31,8 @@ const auth = getAuth(app);
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const navigation = useNavigation();
+
   const handleLogin = async () => {
     console.log("Email:", email);
     console.log("Password:", password);
@@ -47,9 +47,7 @@ const LoginScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
       <View style={{ paddingHorizontal: 25 }}>
-        <View
-          style={{ alignItems: "center", marginBottom: 40, marginTop: -50 }}
-        >
+        <View style={{ alignItems: "center", marginBottom: 40 }}>
           <Image
             style={{
               width: 200,
@@ -60,17 +58,16 @@ const LoginScreen = () => {
             source={require("../assets/logo01.png")}
           />
         </View>
-
         <Text
           style={{
             fontSize: 25,
             fontWeight: "500",
             color: "#333",
             marginBottom: 30,
-            marginTop: 10,
+            textAlign: "center",
           }}
         >
-          Login{" "}
+          Login
         </Text>
         <View
           style={{
@@ -78,7 +75,6 @@ const LoginScreen = () => {
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 8,
-            marginBottom: 20,
           }}
         >
           <MaterialIcons
@@ -89,18 +85,18 @@ const LoginScreen = () => {
           />
           <TextInput
             placeholder="Email"
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={setEmail}
             value={email}
+            autoCapitalize="none"
+            keyboardType="email-address"
           />
         </View>
-
         <View
           style={{
             flexDirection: "row",
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 8,
-            marginBottom: 20,
           }}
         >
           <MaterialIcons
@@ -111,9 +107,9 @@ const LoginScreen = () => {
           />
           <TextInput
             placeholder="Password"
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={setPassword}
             value={password}
-            secureTextEntry
+            secureTextEntry={true}
           />
           <TouchableOpacity onPress={() => {}}>
             <Text
@@ -123,9 +119,8 @@ const LoginScreen = () => {
             </Text>
           </TouchableOpacity>
         </View>
-
         <TouchableOpacity
-          onPress={() => handleLogin()}
+          onPress={handleLogin}
           style={{
             backgroundColor: "#07CC3E",
             padding: 20,
@@ -136,73 +131,14 @@ const LoginScreen = () => {
           <Text
             style={{ textAlign: "center", fontWeight: "700", color: "#fff" }}
           >
-            login
+            Login
           </Text>
         </TouchableOpacity>
-
-        <Text style={{ textAlign: "center", color: "#666", marginBottom: 30 }}>
-          or,login with...
-        </Text>
-
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginBottom: 30,
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => {}}
-            style={{
-              borderColor: "#ddd",
-              borderWidth: 1,
-              borderRadius: 10,
-              paddingHorizontal: 40,
-              paddingVertical: 10,
-            }}
-          >
-            <Image
-              style={{ width: 24, height: 24 }}
-              source={require("../assets/misc/Facebook.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {}}
-            style={{
-              borderColor: "#ddd",
-              borderWidth: 1,
-              borderRadius: 10,
-              paddingHorizontal: 40,
-              paddingVertical: 10,
-            }}
-          >
-            <Image
-              style={{ width: 24, height: 24 }}
-              source={require("../assets/misc/Google.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {}}
-            style={{
-              borderColor: "#ddd",
-              borderWidth: 1,
-              borderRadius: 10,
-              paddingHorizontal: 40,
-              paddingVertical: 10,
-            }}
-          >
-            <Image
-              style={{ width: 24, height: 24 }}
-              source={require("../assets/misc/Linkedin.png")}
-            />
-          </TouchableOpacity>
-        </View>
         <View
           style={{
             flexDirection: "row",
             justifyContent: "center",
             marginBottom: 30,
-            marginTop: 10,
           }}
         >
           <Text>new to the app?</Text>
